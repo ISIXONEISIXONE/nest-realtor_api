@@ -10,7 +10,7 @@ export class HomeResponseDto {
 
   @Expose({ name: 'numberOfBedrooms' })
   numberOfbedrooms() {
-    return this.numberOfbedrooms;
+    return this.number_of_bedrooms;
   }
 
   @Exclude()
@@ -28,24 +28,34 @@ export class HomeResponseDto {
 
   @Expose({ name: 'listedDate' })
   listedDate() {
-    return this.listedDate;
+    return this.listed_date;
   }
 
   price: number;
+
+  image: string;
 
   @Exclude()
   land_size: number;
 
   @Expose({ name: 'landSize' })
   landSize() {
-    return this.landSize;
+    return this.land_size;
   }
 
+  @Exclude()
   property_type: PropertyType;
+
+  @Expose({ name: 'propertyType' })
+  propertyType() {
+    return this.property_type;
+  }
 
   @Exclude()
   created_at: Date;
+  @Exclude()
   updatedAt: Date;
+  @Exclude()
   realor_id: number;
 
   constructor(partial: Partial<HomeResponseDto>) {
